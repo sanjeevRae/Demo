@@ -41,63 +41,92 @@
     </div>
   </header>
 
-  <main class="main">
-
+   <main class="main"> 
     <section id="contact" class="contact section">
-      
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Get in Touch Today</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-          <div class="col-lg-6 ">
-            <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=670&amp;height=445&amp;hl=en&amp;q=awddel&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://sprunkin.com/">Sprunki Phases</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:445px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:445px;}.gmap_iframe {height:445px!important;}</style></div>
+          <div class="col-lg-6">
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=670&amp;height=445&amp;hl=en&amp;q=awddel&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+              </div>
+              <style>
+                .mapouter { position: relative; text-align: right; width: 100%; height: 445px; }
+                .gmap_canvas { overflow: hidden; background: none!important; width: 100%; height: 445px; }
+                .gmap_iframe { height: 445px!important; }
+              </style>
+            </div>
           </div>
 
           <div class="col-lg-6">
-            <form action="" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
               <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                  <textarea id="message" name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
+                  <div class="loading">Loading...</div>
+                  
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
                   <button type="submit">Send Message</button>
                 </div>
-
               </div>
             </form>
           </div>
-
         </div>
-
       </div>
-
     </section>
-
-
-    
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("C-c_ieBFgoEKweILO");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const userEmail = document.getElementById("email").value;
+      const userMessage = document.getElementById("message").value;
+      const fullMessage = `From: ${userEmail}\n\n${userMessage}`;
+      const formData = {
+        name: document.getElementById("name").value,
+        email: userEmail,
+        subject: document.getElementById("subject").value,
+        message: fullMessage
+      };
+
+      emailjs.send("service_wje2o1f", "template_oa0ipsl", formData)
+        .then(function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+          document.querySelector(".sent-message").style.display = "block";
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          console.log("FAILED...", error);
+          document.querySelector(".error-message").style.display = "block";
+        });
+    });
+  </script>
+
 
   <footer id="footer" class="footer dark-background">
 
@@ -170,6 +199,7 @@
   <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
   <script src="../assets/js/main.js"></script>
 
 </body>
