@@ -8,25 +8,20 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
- 
   <link href="assets/img/add.svg" rel="icon">
-  
-  <!-- Preconnect & Preload for Faster Rendering -->
-  <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" >
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" >
-  <link href="assets/vendor/swiper/swiper-bundle.min.css">
-  <link href="assets/css/main.css" as="style">
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
   
-  <style>
-    /* Prevent Layout Shifts */
-    .hero-slider img, .client-logo img, .portfolio-content img { width: 100%; height: auto; max-width: 300px; }
-    .main { min-height: 500px; }
-  </style>
+
+
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -63,18 +58,22 @@
       <div class="hero-slider swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assets/img/service/hydro.webp" alt="Awddel Holdings" loading="lazy">
-          </div>
-          
-          <div class="swiper-slide">
-            <img src="assets/img/portfolio/place4.webp" alt="Awddel Holdings" loading="lazy">
+            <img src="assets/img/service/hydro.jpg" alt="Awddel Holdings">
           </div>
           <div class="swiper-slide">
-            <img src="assets/img/portfolio/solar.webp" alt="Awddel Holdings" loading="lazy">
+            <img src="assets/img/service/business1.jpg" alt="Awddel Holdings">
           </div>
-          
           <div class="swiper-slide">
-            <img src="assets/img/service/ev.webp" alt="Awddel Holdings " loading="lazy">
+            <img src="assets/img/portfolio/place4.jpg" alt="Awddel Holdings">
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/portfolio/solar.jpg" alt="Awddel Holdings">
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/portfolio/antena.jpg" alt="Awddel Holdings ">
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/img/service/ev.jpg" alt="Awddel Holdings ">
           </div>
           
         </div>
@@ -83,19 +82,21 @@
     
       <div class="container d-flex flex-column align-items-center text-center" style="position: relative; z-index: 3;">
         <h1 >Building the Future</h1>
-        <p >
+        <p>
           Driving industries forward with Trust, Vision, and Impact.
         </p>
         <div class="d-flex mt-4" >
           <a href="#about" class="btn-get-started">Learn More</a>
         </div>
+
+        
       </div>
     </section>
     
     <section id="about" class="about section">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-6" >
+          <div class="col-lg-6">
             <h2>About Us</h2>
            </div>
            <p>Awddel Holdings is a diversified business group with a strong presence in automobiles, aviation, hospitality, telecommunications, retail, and finance. With over three decades of growth, we are committed to excellence, innovation, and integrity. Our operations span the SAARC and Asian regions, where we continue to shape industries and create value.</p>
@@ -163,12 +164,12 @@
 
 
     <section id="services" class="services section">
-      <div class="container section-title">
+      <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
         <p>Featured Services<br></p>
       </div>
 
-      <div class="container">
+      <div class="container" >
 
         <div class="row gy-5">
 
@@ -231,7 +232,7 @@
 
     <section id="clients" class="clients section light-background">
 
-      <div class="container" >
+      <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
 
@@ -304,7 +305,7 @@
 
         <div class="row gy-4">
 
-          <div class="col-md-6" >
+          <div class="col-md-6">
             <div class="service-item d-flex position-relative h-100">
               <i class="bi bi-broadcast icon flex-shrink-0"></i>
               <div>
@@ -325,7 +326,7 @@
           </div>
 
 
-          <div class="col-md-6" >
+          <div class="col-md-6">
             <div class="service-item d-flex position-relative h-100">
               <i class="bi bi-car-front icon flex-shrink-0"></i>
               <div>
@@ -363,7 +364,7 @@
     
 
     <section id="portfolio" class="portfolio section">
-      <div class="container section-title">
+      <div class="container section-title" >
         <h2>Portfolio</h2>
         <p>CHECK OUR PORTFOLIO</p>
       </div>
@@ -372,7 +373,7 @@
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          
+        
 
           <div class="row gy-4 isotope-container" >
 
@@ -451,7 +452,7 @@
           <p>Get in Touch Today</p>
         </div>
   
-        <div class="container" >
+        <div class="container" data-aos="fade-up" >
           <div class="row gy-4">
             <div class="col-lg-6">
               <div class="mapouter">
@@ -467,7 +468,7 @@
             </div>
   
             <div class="col-lg-6">
-              <form id="contact-form" class="php-email-form" >
+              <form id="contact-form" class="php-email-form">
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
@@ -601,18 +602,16 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-<script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
-
-<!-- Load Swiper JS only when needed -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
-
-<!-- Main JS file -->
-<script src="assets/js/main.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
